@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Kebersihan Pabrik Kelapa Sawit</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Style umum untuk body */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #9470e7;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Header */
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        /* Form styling */
+        form {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input[type="text"], input[type="file"], input[type="date"], select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 20px 0;
+            border: 2px solid #8a56dd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: rgb(0, 1, 8);
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            margin-top: 40px;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #f4f4f4;
+            font-size: 1.1rem;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table td {
+            font-size: 1rem;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            form {
+                padding: 20px;
+            }
+
+            input[type="text"], input[type="file"], input[type="date"], select {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+
+            input[type="submit"] {
+                padding: 10px 15px;
+                font-size: 1rem;
+            }
+
+            table th, table td {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Laporan Kebersihan PT. Agro Gading Sejahtera</h1>
+
+<!-- Formulir Input -->
+<form action="/submit-laporan" method="POST" enctype="multipart/form-data">
+    <label for="nama_karyawan">Nama Karyawan:</label>
+    <input type="text" id="nama_karyawan" name="nama_karyawan" required>
+
+    <select id="stasiun" name="stasiun" required>
+        <option value="Penerimaan TBS">Loading Ramp</option>
+        <option value="Sterilisasi">Sterilisasi</option>
+        <option value="Pemisahan Buah">Threshing</option>
+        <option value="Pengepresan">Pressing</option>
+        <option value="Pemurnian">Clarification</option>
+        <option value="Pengeringan">Drying</option>
+        <option value="Pengolahan Kernel">PKernel Processing</option>
+        <option value="Pengolahan Limbah">Waste Treatment</option>
+        <option value="Penyimpana">Storage</option>
+        <option value="Kantor dan Administrasi">Kantor dan Administrasi</option>
+    </select>
+    
+
+    <label for="gambar_kebersihan">Upload Gambar Kebersihan:</label>
+    <input type="file" id="gambar_kebersihan" name="gambar_kebersihan" accept="image/*" required>
+
+    <label for="pimpinan">Pimpinan Departemen:</label>
+    <input type="text" id="pimpinan" name="pimpinan" required>
+
+    <label for="tanggal">Tanggal Laporan:</label>
+    <input type="date" id="tanggal" name="tanggal" required>
+
+    <label for="Jam Kerja">Jam Kerja:</label>
+    <input type="time" id="Jam Masuk" name="Jam Pulang" required>
+
+    
+    <input type="submit" value="Kirim Laporan">
+</form>
+
